@@ -50,10 +50,13 @@ public class ReadQuery {
     }
     
     public void doRead() {
+         
+         
+         
         try {
-            String query = "Select * from STUDENTMAJORS";
-            
+           String query = "Select * from STUDENTMAJORS";
             PreparedStatement ps= conn.prepareStatement(query);
+            this.results= ps.executeQuery();
             {
                 
             }} catch (SQLException ex) {
@@ -73,13 +76,14 @@ public class ReadQuery {
                 StudentMajors studentmajors= new StudentMajors();
                 
                 studentmajors.setSTUDENTID(this.results.getString("StudentId"));
-                studentmajors.setMAJOR(this.results.getString("Majors"));
+                studentmajors.setMAJOR(this.results.getString("Major"));
                 studentmajors.setHOMETOWN(this.results.getString("Hometown"));
                 studentmajors.setAge(this.results.getInt("Age"));
                 studentmajors.setFavBar(this.results.getString("FavBar"));
                 
                 
                 table += "<tr>";
+                
                 table += "<td>";
                 table += studentmajors.getSTUDENTID();
                 table += "</td>";
