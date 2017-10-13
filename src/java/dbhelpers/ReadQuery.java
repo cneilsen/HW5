@@ -66,8 +66,22 @@ public class ReadQuery {
     
     public String getHTMLTable () {
         
-        String table = "Student Majors";
-        table += "<table border=1>";
+        String table = "";
+        table += "<table>";
+        
+           table +="<tr>";
+                table += "<th>StudentId</th>"; 
+              
+                table += "<th>Major</th>"; 
+           
+                table += "<th>Hometown</th>"; 
+               
+                table += "<th>Age</th>"; 
+               
+                table += "<th>FavBar</th>"; 
+                
+                table +="</tr>";
+               
         
         try {
             while(this.results.next()){
@@ -81,9 +95,11 @@ public class ReadQuery {
                 studentmajors.setAge(this.results.getInt("Age"));
                 studentmajors.setFavBar(this.results.getString("FavBar"));
                 
+               
+               
+             
                 
                 table += "<tr>";
-                
                 table += "<td>";
                 table += studentmajors.getSTUDENTID();
                 table += "</td>";
@@ -107,6 +123,10 @@ public class ReadQuery {
                 table += "<td>";
                 table += studentmajors.getFavBar();
                 table += "</td>";
+                
+                table += "<td>";
+                table += "<a href=delete?STUDENTID=" +studentmajors.getSTUDENTID() + "> Delete </a>";
+                table += "<td>";        
                 
                 table +="</tr>";
                 
