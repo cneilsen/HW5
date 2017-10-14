@@ -16,9 +16,6 @@
         <h1>Add a New Student</h1>
         <div class="addform">
         <form name="AddForm" action="addstudent" method="get">
-        
-            <label> StudentId: </label>
-            <input type="text" name="STUDENTID" value="" />
             
             <br>
              <label> Major: </label>

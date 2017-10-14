@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dbhelpers;
 
 import java.io.IOException;
@@ -16,10 +11,6 @@ import java.util.logging.Logger;
 import model.StudentMajors;
 import java.sql.PreparedStatement;
 
-/**
- *
- * @author carterneilsen
- */
 public class AddQuery {
     private Connection conn;
     
@@ -32,7 +23,6 @@ public class AddQuery {
         } catch (IOException ex) {
             Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
          try {
              
             instr.close();
@@ -60,16 +50,16 @@ public class AddQuery {
     public void doAdd (StudentMajors studentmajors) {
          
         try {
-            String query = "INSERT INTO STUDENTMAJORS (Major, Hometown, Age, FavBar) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO STUDENTMAJORS (MAJOR, HOMETOWN, Age, FavBar) VALUES (?, ?, ?, ?)";
             
             PreparedStatement ps = conn.prepareStatement (query);
         
             
-                ps.setString(1, studentmajors.getSTUDENTID());
-                ps.setString(2, studentmajors.getMAJOR());
-                ps.setString(3, studentmajors.getHOMETOWN());
-                ps.setInt(4, studentmajors.getAge());
-                ps.setString(5, studentmajors.getFavBar());
+                
+                ps.setString(1, studentmajors.getMAJOR());
+                ps.setString(2, studentmajors.getHOMETOWN());
+                ps.setInt(3, studentmajors.getAge());
+                ps.setString(4, studentmajors.getFavBar());
                 
                 ps.executeUpdate();
             

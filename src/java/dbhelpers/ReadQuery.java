@@ -95,9 +95,6 @@ public class ReadQuery {
                 studentmajors.setAge(this.results.getInt("Age"));
                 studentmajors.setFavBar(this.results.getString("FavBar"));
                 
-               
-               
-             
                 
                 table += "<tr>";
                 table += "<td>";
