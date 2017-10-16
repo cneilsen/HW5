@@ -8,9 +8,6 @@ package controller;
 import dbhelpers.AddQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -79,14 +76,12 @@ public class AddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String ID = request.getParameter("STUDENTID");
         String Major = request.getParameter("MAJOR");
         String Hometown = request.getParameter("HOMETOWN");
         int Age = Integer.parseInt(request.getParameter("Age"));
         String FavBar = request.getParameter("FAVBAR");
         
         StudentMajors studentmajor = new StudentMajors (); 
-        studentmajor.setSTUDENTID (ID);
         studentmajor.setMAJOR (Major);
         studentmajor.setHOMETOWN (Hometown);
         studentmajor.setAge (Age);
@@ -99,9 +94,6 @@ public class AddServlet extends HttpServlet {
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward (request, response); 
-        
-        
-        
         
         
     }

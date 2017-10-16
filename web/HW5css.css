@@ -23,8 +23,9 @@ th{
 table { 
 background-color: #FO8O8O;
 border-collapse: collapse;
-width: 60%;
+width: 100%;
 border: #696969;
+border-width: 5px;
 color: #696969;
 }
 
@@ -40,7 +41,9 @@ margin: 0px;
     background-color: #FFFF99;
     margin-bottom: 2%;
     border: 1px solid #696969;
-    height: 30px;}
+    height: 30px;
+    text-align: center;
+}
 
 .buttons input[type="reset"]{
     background-color: white;
@@ -57,4 +60,8 @@ margin: 0px;
     padding: 8px;
     border: 2px solid #696969;
     border-radius: 10px;
+}
+
+.h1{
+    color: #FO8O8O;
 }

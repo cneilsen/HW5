@@ -11,6 +11,17 @@ public class StudentMajors {
     private String FavBar;
     
 
+    
+       public StudentMajors(String STUDENTID, String MAJOR, String HOMETOWN, int Age, String FavBar) {
+        this.STUDENTID = STUDENTID;
+        this.MAJOR = MAJOR;
+        this.HOMETOWN = HOMETOWN;
+        this.Age = Age;
+        this.FavBar = FavBar; 
+    }
+
+       
+       
      public StudentMajors() {
         this.STUDENTID = "";
         this.MAJOR = "";
@@ -20,14 +31,7 @@ public class StudentMajors {
         
     }
      
-      public StudentMajors(String STUDENTID, String MAJOR, String HOMETOWN, int Age, String FavBar) {
-        this.STUDENTID = STUDENTID;
-        this.MAJOR = MAJOR;
-        this.HOMETOWN = HOMETOWN;
-        this.Age = Age;
-        this.FavBar = FavBar; 
-    }
-
+   
     public String getSTUDENTID() {
         return STUDENTID;
     }

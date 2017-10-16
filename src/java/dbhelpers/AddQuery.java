@@ -49,26 +49,29 @@ public class AddQuery {
     
     public void doAdd (StudentMajors studentmajors) {
          
+        
         try {
             String query = "INSERT INTO STUDENTMAJORS (MAJOR, HOMETOWN, Age, FavBar) VALUES (?, ?, ?, ?)";
             
             PreparedStatement ps = conn.prepareStatement (query);
-        
             
-                
-                ps.setString(1, studentmajors.getMAJOR());
-                ps.setString(2, studentmajors.getHOMETOWN());
-                ps.setInt(3, studentmajors.getAge());
-                ps.setString(4, studentmajors.getFavBar());
-                
-                ps.executeUpdate();
             
+            
+            ps.setString(1, studentmajors.getMAJOR());
+            ps.setString(2, studentmajors.getHOMETOWN());
+            ps.setInt(3, studentmajors.getAge());
+            ps.setString(4, studentmajors.getFavBar());
+            
+            ps.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(AddQuery.class.getName()) .log(Level.SEVERE, null, ex);
+            Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+       
         }
     }
             
-        }
+        
     
 
 

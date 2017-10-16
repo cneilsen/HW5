@@ -15,7 +15,7 @@
     <body>
         <h1>Add a New Student</h1>
         <div class="addform">
-        <form name="AddForm" action="addstudent" method="get">
+        <form name="AddForm" action="Add" method="get">
             
             <br>
              <label> Major: </label>
